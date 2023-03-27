@@ -1,24 +1,10 @@
-import React, { useState } from 'react';
-import { Form, Button, Tabs, Tab } from 'react-bootstrap';
+import { Tabs, Tab } from 'react-bootstrap';
 import Login from "./Login";
 import Register from "./Register";
 
 function UserAuth({ onToken }) {
-    // const [token, setToken] = useState(null);
-
-    // const onLogin = (token) => {
-    
-    //     const updatedBooks = [
-    //       ...books,
-    //       { 
-    //         id: Math.round(Math.random() * 9999), 
-    //         title: title }
-    //     ];
-    
-    //     setBooks(updatedBooks);
-    //   };
-
-    const handleLogin = (token) => {
+     const handleLogin = (token) => {
+        localStorage.setItem('token', token);
         onToken(token);
       };
 
@@ -41,8 +27,4 @@ function UserAuth({ onToken }) {
       );
 }
 
-// const UserAuth = () => {
-    
-//   }
-  
   export default UserAuth;

@@ -1,0 +1,6 @@
+/* Limit text to one line */
+.news-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }

@@ -4,8 +4,6 @@ import { Form, Button } from 'react-bootstrap';
 
 function Register() {
     const [name, setName] = useState('');
-    // const [firstName, setFirstName] = useState('');
-    // const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [password_confirmation, setPasswordConfirmation] = useState('');
@@ -30,16 +28,6 @@ function Register() {
           <Form.Control type="text" placeholder="Enter full name" value={name} onChange={(e) => setName(e.target.value)} />
         </Form.Group>
 
-        {/* <Form.Group controlId="formBasicFirstName">
-          <Form.Label>First Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter first name" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
-        </Form.Group>
-  
-        <Form.Group controlId="formBasicLastName">
-          <Form.Label>Last Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter last name" value={lastName} onChange={(e) => setLastName(e.target.value)} />
-        </Form.Group> */}
-  
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -64,12 +52,6 @@ function Register() {
       </Form>
     );
 }
-
-
-
-// const Register = () => {
-    
-//   }
 
 export default Register;
   

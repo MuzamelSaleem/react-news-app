@@ -6,11 +6,7 @@ function Login(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  // const [username, setUsername] = useState("");
-  // const [showError, setShowError] = useState(false);
-
   const [error, setError] = useState(null);
-
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -22,8 +18,6 @@ function Login(props) {
       .catch(error => {
         setError(error.response.data.message);
       });
-
-
   }
 
   return (
@@ -47,11 +41,5 @@ function Login(props) {
     </Form>
   );
 }
-
-
-
-// const Login = () => {
-  
-// }
 
 export default Login;
