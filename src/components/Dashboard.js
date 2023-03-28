@@ -20,8 +20,6 @@ function Dashboard(props) {
   }, []);
 
   const getArticles = async () => {
-      
-    console.log(props)
     const response = await axios.get("http://localhost:8000/api/news", { headers: { Authorization: `Bearer ${props.token}` }});
     setArticles(response.data[0]);
   };
@@ -37,7 +35,7 @@ function Dashboard(props) {
         },
       })
       .then((response) => {
-        setArticles(response.data);
+        setArticles(response.data[0]);
       })
       .catch((error) => {
         console.log(error);

@@ -2,8 +2,10 @@ import React from 'react';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 
 function NavigationBar(props) {
+  console.log(localStorage.getItem('token'));
   const handleLogout = () => {
-    props.onLogout(null);
+    localStorage.removeItem('token');
+    window.location.href = '/';
   }
 
   return (
