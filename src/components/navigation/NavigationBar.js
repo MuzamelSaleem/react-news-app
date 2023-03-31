@@ -1,8 +1,8 @@
 import React from 'react';
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-function NavigationBar(props) {
-  console.log(localStorage.getItem('token'));
+function NavigationBar() {
   const handleLogout = () => {
     localStorage.removeItem('token');
     window.location.href = '/';
@@ -10,15 +10,21 @@ function NavigationBar(props) {
 
   return (
     <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="/">My News App</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-          <NavDropdown title="Account" id="basic-nav-dropdown">
-            <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
-          </NavDropdown>
-        </Nav>
-      </Navbar.Collapse>
+       <Container>
+       <Navbar.Brand href="/">My News</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+          </Nav>
+          <Nav>
+            <NavDropdown title="Profile" id="basic-nav-dropdown">
+              <Link to="/perferences" className="dropdown-item">Edit Preferences</Link>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#" onClick={handleLogout}>Logout</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
     </Navbar>
   );
 }
