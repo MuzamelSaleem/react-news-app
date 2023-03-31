@@ -86,17 +86,11 @@ function Dashboard(props) {
           <Form onSubmit={handleSearch}>
             <Row>
               <Col className="mt-0 mb-2" md={3} sm={12} xs={12}>
-                <Form.Group
-                  aria-label="Source"
-                  value={source}
-                  onChange={(e) => setSource(e.target.value)}
-                >
-                  <Form.Control
-                    type="text"
-                    value={searchKeyword}
-                    onChange={(event) => setSearchKeyword(event.target.value)}
-                  />
-                </Form.Group>
+                <Form.Control
+                  type="text"
+                  value={searchKeyword}
+                  onChange={(event) => setSearchKeyword(event.target.value)}
+                />
               </Col>
               <Col className="mt-0 mb-2" md={3} sm={12} xs={12}>
                 <Form.Select
